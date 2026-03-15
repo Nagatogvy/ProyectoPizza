@@ -11,7 +11,7 @@ public class Main {
 
         do {
 
-            System.out.println("\n=== PIZZA TRACK ===");
+            System.out.println("\nPizzeria SB");
             System.out.println("1. Registrar Pizza");
             System.out.println("2. Deshacer (Undo)");
             System.out.println("3. Rehacer (Redo)");
