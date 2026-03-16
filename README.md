@@ -1,94 +1,124 @@
-# ProyectoPizza - Sistema de Gestión de Pedidos
+# ProyectoPizza
 
-## Objetivo
+Simulador de gestión de pedidos para una pizzería desarrollado en Java.  
+Este proyecto implementa la estructura de datos **Pila (Stack)** utilizando **listas ligadas**, permitiendo simular un sistema de **Undo / Redo** para gestionar pedidos.
 
-Comprender el funcionamiento de la estructura de datos pila implementada manualmente mediante listas ligadas en Java, aplicándola en un simulador de gestión de pedidos para una pizzería que permita registrar pedidos, deshacer acciones y rehacer pedidos eliminados.
+
+## Autor
+
+Sebastián Barrientos
+
 
 ## Descripción del proyecto
 
-PizzaTrack es una aplicación de consola desarrollada en Java que simula el sistema de gestión de pedidos de una pizzería. El sistema utiliza la estructura de datos **Pila (Stack)** implementada manualmente con **listas ligadas**, permitiendo aplicar operaciones de **Undo (Deshacer)** y **Redo (Rehacer)**.
+Este programa simula el sistema de pedidos de una pizzería.  
+Permite registrar pedidos y administrar las acciones realizadas mediante el uso de pilas.
 
 El sistema permite:
 
-- Registrar pedidos de pizza
-- Deshacer el último pedido registrado
-- Rehacer un pedido previamente deshecho
-- Visualizar el pedido actual en preparación
+- Agregar pedidos de pizza
+- Deshacer el último pedido (Undo)
+- Rehacer un pedido deshecho (Redo)
+- Mostrar los pedidos actuales
 
-## Tecnologías utilizadas
-
-- Java
-- Visual Studio Code
-- Git
-- GitHub
+El objetivo del proyecto es demostrar el funcionamiento de la estructura de datos **pila** aplicada a un caso práctico.
 
 ## Estructura del proyecto
 
-PizzaTrack
+ProyectoPizza
 │
 ├── src
-│   ├── Pizza.java
-│   ├── Nodo.java
-│   ├── Pila.java
-│   ├── GestionPedidos.java
-│   └── Main.java
+│ ├── Pizza.java
+│ ├── Nodo.java
+│ ├── Pila.java
+│ ├── GestionPedidos.java
+│ └── Main.java
 │
-└── README.md
+├── README.md
+└── .gitignore
 
-## Instrucciones de ejecución
+## Explicación de las clases
 
-1. Abrir la terminal en la carpeta src
+**Pizza.java**  
+Representa un pedido de pizza con sus atributos.
 
-2. Compilar el programa:
+**Nodo.java**  
+Implementa el nodo de una lista ligada que será utilizada por la pila.
+
+**Pila.java**  
+Implementación manual de la estructura de datos **Pila (Stack)** usando nodos.
+
+**GestionPedidos.java**  
+Controla la lógica del sistema de pedidos y maneja las pilas para **Undo y Redo**.
+
+**Main.java**  
+Contiene el menú interactivo que permite al usuario usar el sistema desde la consola.
+
+## Funcionamiento del sistema Undo / Redo
+
+El sistema utiliza **dos pilas**:
+
+**Pila Undo**
+- Guarda los pedidos realizados
+- Permite deshacer la última acción
+
+**Pila Redo**
+- Guarda los pedidos deshechos
+- Permite rehacer acciones previamente deshechas
+
+Esto simula el comportamiento de aplicaciones reales que permiten deshacer y rehacer acciones.
+
+## Cómo ejecutar el programa
+
+1. Abrir la carpeta del proyecto en **VS Code**
+
+2. Ir a la carpeta `src`
+
+3. Compilar el programa
 
 javac *.java
 
-3. Ejecutar el programa:
+4. Ejecutar el programa
 
 java Main
 
-## Funcionalidades del sistema
+Tecnologías utilizadas
 
-1. Registrar Pizza  
-Permite ingresar el nombre de la pizza y tres ingredientes que se almacenan en un arreglo.
+- Java
+- Git
+- GitHub
+- Visual Studio Code
 
-2. Deshacer Pedido (Undo)  
-Elimina el último pedido registrado moviéndolo a la pila secundaria.
+## Objetivo académico
 
-3. Rehacer Pedido (Redo)  
-Recupera el último pedido deshecho devolviéndolo a la pila principal.
-
-4. Mostrar Pedido Actual  
-Permite visualizar la pizza que se encuentra en el tope de la pila principal.
-
-## Implementación de la pila
-
-La estructura de pila se implementa manualmente utilizando **listas ligadas**, donde cada nodo contiene un objeto Pizza y una referencia al siguiente nodo.
-
-Se implementaron los siguientes métodos fundamentales:
-
-- push(): inserta un elemento en el tope de la pila  
-- pop(): elimina el elemento del tope  
-- peek(): muestra el elemento del tope sin eliminarlo  
-- isEmpty(): verifica si la pila está vacía  
-
-## Sistema Undo / Redo
-
-El sistema utiliza dos pilas:
-
-Pila Principal: almacena los pedidos activos.  
-Pila Secundaria: almacena temporalmente los pedidos deshechos.
-
-Flujo:
-
-Registrar Pedido → push en pila principal  
-Deshacer → pop de pila principal y push en pila secundaria  
-Rehacer → pop de pila secundaria y push en pila principal  
+Este proyecto fue desarrollado como actividad académica para comprender el uso de **estructuras de datos**, específicamente la **pila**, y su aplicación en sistemas reales mediante la simulación de un gestor de pedidos con funcionalidad **Undo/Redo**.
 
 ## Capturas de ejecución
 
-(Aquí se agregarán capturas de pantalla del programa en ejecución)
+### Menu principal
+
+![Menu principal](imagenes/pizza1.png)
+
+### Registrar pizza
+
+![Registrar pizza](imagenes/pizza2.png)
+
+### Mostrar pedido actual
+
+![Mostrar pedido actual](imagenes/pizza3.png)
+
+### Deshacer pedido (Undo)
+
+![Deshacer pedido](imagenes/pizza4.png)
+
+### Rehacer pedido (Redo)
+
+![Rehacer pedido](imagenes/pizza5.png)
+
+### Salir del programa (Redo)
+
+![Salir del programa](imagenes/pizza6.png)
 
 ## Video de sustentación
 
-Link del video: (Agregar enlace de YouTube o Drive)
+Link del video: https://youtu.be/EnKy_um0RRE
